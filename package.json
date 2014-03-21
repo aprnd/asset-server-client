@@ -1,0 +1,22 @@
+{
+  "name": "asset-server-client",
+  "version": "0.1.45",
+  "description": "Node.js client module to work with file storage asset-server",
+  "author": {
+    "name": "Applied Research and Development",
+    "email": "info@aprnd.com"
+  },
+  "dependencies": {
+    "bcrypt": "0.7.7",
+    "async": "0.2.9"
+  },
+  "maintainers": [
+    {
+      "name": "Juho Hietala",
+      "email": "juho.hietala@aprnd.com"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.21"
+  }
+}
