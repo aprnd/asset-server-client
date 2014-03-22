@@ -1,6 +1,6 @@
 {
   "name": "asset-server-client",
-  "version": "0.1.5",
+  "version": "0.1.51",
   "description": "Node.js client module to work with file storage asset-server",
   "author": {
     "name": "Applied Research and Development",
@@ -18,5 +18,10 @@
   ],
   "engines": {
     "node": ">= 0.10.21"
+  },
+  "readmeFilename": "README.md",
+  "repository": {
+    "type" : "git",
+    "url" : "http://github.com/aprnd/asset-server-client.git"
   }
 }
