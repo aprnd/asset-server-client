@@ -13,6 +13,7 @@ Client module for asset-server (https://github.com/aprnd/asset-server)
 3. Go to test/
 4. Assuming your server is running locally, you can create a bucket with:
 
+```
     $ node createbucket.js local.asset-server.com 5604 "Testing bucket" testerbucket SomeReallyPrivateBucketCreationKey
     ------
     Creating bucket Testing bucket
@@ -21,10 +22,11 @@ Client module for asset-server (https://github.com/aprnd/asset-server)
     HEADERS: {"content-type":"application/json","content-length":"159","date":"Sat, 22 Mar 2014 16:52:38 GMT","connection":"keep-alive"}
     SUCCESS creating bucket testerbucket (named SomeReallyPrivateBucketCreationKey) on local.asset-server.com:5604
     BODY: {"subdomain":"testerbucket","name":"Testing bucket","apiKey":"66a26c035f773c3b63c4206faf484b94337f2c79","apiSecret":"f6475557309a0e3ffc320f2e13a8a82f6a0e3df8"}
-
+```
 
 5. It should return an api key and a secret that you can use to access your new bucket like so:
 
+```
     $ node put.js local.asset-server.com 5604 testerbucket 66a26c035f773c3b63c4206faf484b94337f2c79 f6475557309a0e3ffc320f2e13a8a82f6a0e3df8 napoleon.jpg /test/napoleon.jpg image/jpg
     ------
     Testing PUT upload of napoleon.jpg (of type image/jpg) to testerbucket.local.asset-server.com:5604/test/napoleon.jpg
@@ -58,5 +60,6 @@ Client module for asset-server (https://github.com/aprnd/asset-server)
       [ ... ]
 
       SUCCESS PUT testerbucket.local.asset-server.com:5604/test/napoleon.jpg
+```
 
 6. Try loading http://testerbucket.local.asset-server.com:5604/test/napoleon.jpg in your browser. You can also load versions with the query string ?versionId returned from the PUT request header x-amz-version-id. For example in this case, http://testerbucket.local.asset-server.com:5604/test/napoleon.jpg?versionId=51f7ea03dfd0611115a8aad88c8130c4.
