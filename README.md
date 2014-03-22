@@ -8,10 +8,10 @@ Client module for asset-server (https://github.com/aprnd/asset-server)
 
 ## Installing/testing
 
-1. Install asset-server
-2. Run npm install after getting asset-server-client
-3. Go to test/
-4. Assuming your server is running locally, you can create a bucket with:
+- Install asset-server
+- Run npm install after getting asset-server-client
+- Go to test/
+- Assuming your server is running locally, you can create a bucket with:
 
 ```
     $ node createbucket.js local.asset-server.com 5604 "Testing bucket" testerbucket SomeReallyPrivateBucketCreationKey
@@ -24,7 +24,7 @@ Client module for asset-server (https://github.com/aprnd/asset-server)
     BODY: {"subdomain":"testerbucket","name":"Testing bucket","apiKey":"66a26c035f773c3b63c4206faf484b94337f2c79","apiSecret":"f6475557309a0e3ffc320f2e13a8a82f6a0e3df8"}
 ```
 
-5. It should return an api key and a secret that you can use to access your new bucket like so:
+- It should return an api key and a secret that you can use to access your new bucket like so:
 
 ```
     $ node put.js local.asset-server.com 5604 testerbucket 66a26c035f773c3b63c4206faf484b94337f2c79 f6475557309a0e3ffc320f2e13a8a82f6a0e3df8 napoleon.jpg /test/napoleon.jpg image/jpg
@@ -62,4 +62,4 @@ Client module for asset-server (https://github.com/aprnd/asset-server)
       SUCCESS PUT testerbucket.local.asset-server.com:5604/test/napoleon.jpg
 ```
 
-6. Try loading http://testerbucket.local.asset-server.com:5604/test/napoleon.jpg in your browser. You can also load versions with the query string ?versionId returned from the PUT request header x-amz-version-id. For example in this case, http://testerbucket.local.asset-server.com:5604/test/napoleon.jpg?versionId=51f7ea03dfd0611115a8aad88c8130c4.
+- Try loading http://testerbucket.local.asset-server.com:5604/test/napoleon.jpg in your browser. You can also load versions with the query string ?versionId returned from the PUT request header x-amz-version-id. For example in this case, http://testerbucket.local.asset-server.com:5604/test/napoleon.jpg?versionId=51f7ea03dfd0611115a8aad88c8130c4.
