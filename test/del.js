@@ -1,6 +1,5 @@
 var AssetServerClient = require('../index').AssetServerClient;
 var fs = require('fs');
-var async = require('async');
 
 var fileBuffer;
 
@@ -15,25 +14,24 @@ if(process.argv[2] && process.argv[3] && process.argv[4] && process.argv[5] && p
   });
 
   var res;
-  var req = client.head(process.argv[7]);
+  var req = client.del(process.argv[7]);
   console.log('------');
   console.log('Testing DEL of '+process.argv[7]);
   console.log('------');
 
   req.on('end', function(response) {
     console.log('end: ', response);
+    if(response.statusCode === 200) { console.log('SUCCESS DEL '+client.opts.bucket+'.'+client.opts.domain+':'+client.opts.port+process.argv[7]); }
     return response;
   });
 
   req.on('error', function(err) {
-    console.log('error: ', err);
+    console.log('ERROR DEL '+client.opts.bucket+'.'+client.opts.domain+':'+client.opts.port+process.argv[7], err);
     return err;
   });
 
-  return res;
-
 }
 else {
-  console.log('Usage: node asset-server-test-HEAD.js hostname.asset-server.com port bucketname apikey apisecret /path/on/asset-server/filename.ext');
+  console.log('Usage: node del.js hostname.asset-server.com port bucketname apikey apisecret /path/on/asset-server/filename.ext');
   process.exit();
 }
